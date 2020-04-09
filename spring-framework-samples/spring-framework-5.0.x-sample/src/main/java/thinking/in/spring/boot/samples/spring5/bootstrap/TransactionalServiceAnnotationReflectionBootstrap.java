@@ -23,6 +23,7 @@ import thinking.in.spring.boot.samples.spring5.annotation.TransactionalService;
 import java.lang.annotation.Annotation;
 import java.lang.annotation.Target;
 import java.lang.reflect.AnnotatedElement;
+import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -46,9 +47,10 @@ public class TransactionalServiceAnnotationReflectionBootstrap {
         // 显示地调用属性方法 TransactionalService#name() 获取属性
 //        String nameAttribute = transactionalService.name();
 //        System.out.println("@TransactionalService.name() = " + nameAttribute);
-
+        
         // 输出 @TransactionalService 属性
-//        printAnnotationAttribute(transactionalService);
+        printAnnotationAttribute(transactionalService);
+        System.out.println();
         // 获取 transactionalService 的所有的元注解
         Set<Annotation> metaAnnotations = getAllMetaAnnotations(transactionalService);
         // 输出结果

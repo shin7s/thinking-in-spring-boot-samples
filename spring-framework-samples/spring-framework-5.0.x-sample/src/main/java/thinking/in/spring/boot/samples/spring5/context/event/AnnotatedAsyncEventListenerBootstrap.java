@@ -2,6 +2,7 @@ package thinking.in.spring.boot.samples.spring5.context.event;
 
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.event.ApplicationContextEvent;
 import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
@@ -33,9 +34,9 @@ public class AnnotatedAsyncEventListenerBootstrap {
     @EnableAsync // 需要激活异步，否则 @Async 无效
     public static class MyAsyncEventListener {
 
-        @EventListener(ContextRefreshedEvent.class)
+        @EventListener({ContextRefreshedEvent.class, ContextClosedEvent.class})
         @Async
-        public Boolean ontextRefreshedEvent(ContextRefreshedEvent event) {
+        public Boolean ontextRefreshedEvent(ApplicationContextEvent event) {
             println(" MyAsyncEventListener : " + event.getClass().getSimpleName());
             return true;
         }

@@ -45,7 +45,7 @@ public @interface TransactionalService {
     /**
      * @return 服务 Bean 名称
      */
-    @AliasFor(attribute = "value")
+//    @AliasFor(attribute = "value")
     String name() default "";
 
     /**
@@ -53,8 +53,8 @@ public @interface TransactionalService {
      *
      * @return {@link PlatformTransactionManager} Bean 名称
      */
-    @AliasFor("name")
-    String value() default "";
+//    @AliasFor("name")
+//    String value() default "txManager";
 
     /**
      * 建立 {@link Transactional#transactionManager()} 别名
@@ -63,6 +63,7 @@ public @interface TransactionalService {
      */
     @AliasFor(attribute = "transactionManager", annotation = Transactional.class)
     String manager() default "txManager";
+//    String transactionManager() default "txManager";
 
 }
 

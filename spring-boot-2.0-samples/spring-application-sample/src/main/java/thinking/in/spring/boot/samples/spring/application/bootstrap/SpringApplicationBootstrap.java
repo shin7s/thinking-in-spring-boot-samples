@@ -19,6 +19,7 @@ package thinking.in.spring.boot.samples.spring.application.bootstrap;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.jmx.export.annotation.AnnotationMBeanExporter;
+
 import thinking.in.spring.boot.samples.spring.application.config.SpringApplicationConfiguration;
 
 /**
@@ -27,11 +28,13 @@ import thinking.in.spring.boot.samples.spring.application.config.SpringApplicati
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
  * @since 1.0.0
  */
+//@EnableAutoConfiguration
 public class SpringApplicationBootstrap {
 
     public static void main(String[] args) {
         // 启动 Spring Boot 应用
         ConfigurableApplicationContext context = SpringApplication.run(SpringApplicationConfiguration.class, args);
+//    	ConfigurableApplicationContext context = SpringApplication.run(SpringApplicationBootstrap.class, args);
         // 获取 AnnotationMBeanExporter Bean
         AnnotationMBeanExporter beanExporter = context.getBean(AnnotationMBeanExporter.class);
         // 输出 AnnotationMBeanExporter 对象

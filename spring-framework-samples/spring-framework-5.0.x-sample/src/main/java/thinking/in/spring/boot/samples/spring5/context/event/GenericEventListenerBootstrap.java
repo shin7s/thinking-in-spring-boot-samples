@@ -27,9 +27,9 @@ public class GenericEventListenerBootstrap {
         // 初始化上下文
         context.refresh();
         // 构造泛型事件
-        GenericEvent<User> event = new GenericEvent(new User("小马哥"));
+//        GenericEvent<User> event = new GenericEvent(new User("小马哥"));
         // 发送泛型事件
-        context.publishEvent(event);
+//        context.publishEvent(event);
         // 发送 User 对象作为事件源
         context.publishEvent(new User("mercyblitz"));
         // 关闭上下文

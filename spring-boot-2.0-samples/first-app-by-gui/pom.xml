@@ -49,11 +49,11 @@
 		<!--</exclusions>-->
 		<!--</dependency>-->
 
-		<!--&lt;!&ndash; Use Jetty instead &ndash;&gt;-->
-		<!--<dependency>-->
-		<!--<groupId>org.springframework.boot</groupId>-->
-		<!--<artifactId>spring-boot-starter-jetty</artifactId>-->
-		<!--</dependency>-->
+        <!--&lt;!&ndash; Use Jetty instead &ndash;&gt;-->
+		<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-jetty</artifactId>
+		</dependency>
 
 		<!--&lt;!&ndash; Use Undertow instead &ndash;&gt;-->
 		<!--<dependency>-->
@@ -68,10 +68,10 @@
 		</dependency>
 
 		<!-- Tomcat -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-		</dependency>
+		</dependency> -->
 
 		<!-- WebFlux 依赖 -->
 		<dependency>

@@ -16,17 +16,17 @@
  */
 package thinking.in.spring.boot.samples.autoconfigure.formatter;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnNotWebApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnResource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Formatter 自动装配
@@ -58,15 +58,17 @@ public class FormatterAutoConfiguration {
      *
      * @return {@link JsonFormatter}
      */
-    @Bean
-    @ConditionalOnClass(name = "com.fasterxml.jackson.databind.ObjectMapper")
-    @ConditionalOnMissingBean(type = "com.fasterxml.jackson.databind.ObjectMapper")
-    public Formatter jsonFormatter() {
-        return new JsonFormatter();
-    }
+//    @Bean
+//    @ConditionalOnClass(name = "com.fasterxml.jackson.databind.ObjectMapper")
+//    @ConditionalOnMissingBean(type = "com.fasterxml.jackson.databind.ObjectMapper")
+//    public Formatter jsonFormatter() {
+//        return new JsonFormatter();
+//    }
 
     @Bean
+    @ConditionalOnClass(name = "com.fasterxml.jackson.databind.ObjectMapper")
     @ConditionalOnBean(ObjectMapper.class)
+//    @ConditionalOnMissingBean(type = "com.fasterxml.jackson.databind.ObjectMapper")
     public Formatter objectMapperFormatter(ObjectMapper objectMapper) {
         return new JsonFormatter(objectMapper);
     }

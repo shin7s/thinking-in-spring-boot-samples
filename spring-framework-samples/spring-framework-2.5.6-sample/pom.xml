@@ -14,9 +14,9 @@
     <name>《Spring Boot 编程思想》Spring Framework 2.5.6 示例工程</name>
 
     <properties>
-        <spring.version>2.5.6.SEC03</spring.version>
+        <!-- <spring.version>2.5.6.SEC03</spring.version> -->
         <!-- 测试 @StringRepository  多层次 @Component 派生时，请将以下内容反注释，升级 Spring Framework 到 3.0.0.RELEASE  -->
-        <!--<spring.version>3.0.0.RELEASE</spring.version>-->
+        <spring.version>3.0.0.RELEASE</spring.version>
     </properties>
 
     <dependencies>

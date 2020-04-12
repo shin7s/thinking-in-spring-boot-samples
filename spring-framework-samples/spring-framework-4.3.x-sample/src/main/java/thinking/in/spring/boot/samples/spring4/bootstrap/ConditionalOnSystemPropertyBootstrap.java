@@ -15,8 +15,7 @@ public class ConditionalOnSystemPropertyBootstrap {
 
     public static void main(String[] args) {
         // 设置 System Property  language = Chinese
-//        System.setProperty("language", "Chinese");
-    	System.setProperty("language", "English");
+        System.setProperty("language", "Chinese");
         // 构建 Annotation 配置驱动 Spring 上下文
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         // 注册 配置Bean ConditionalMessageConfiguration 到 Spring 上下文
@@ -25,8 +24,6 @@ public class ConditionalOnSystemPropertyBootstrap {
         context.refresh();
         // 获取名称为 "message" Bean 对象
         String message = context.getBean("message", String.class);
-        ConditionalMessageConfiguration bean = context.getBean(ConditionalMessageConfiguration.class);
-        System.out.println(bean.getClass().toString());
         // 输出 message 内容
         System.out.printf("\"message\" Bean 对象 : %s\n", message);
         
